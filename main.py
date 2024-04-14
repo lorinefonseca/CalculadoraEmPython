@@ -2,6 +2,9 @@
 from tkinter import *
 from tkinter import ttk
 
+
+#criei a janela, definindo as configurações principais
+
 window = Tk()
 window.title("Calculadora") # título da window do programa
 window.geometry("335x575") # largura e altura
@@ -20,7 +23,6 @@ window_buttons.grid(row=1, column=0)
 equation = ""
 
 #função para mostrar no label o que está sendo digitado
-
 def show(value):
     global equation
     equation+=value
