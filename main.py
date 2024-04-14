@@ -19,16 +19,20 @@ window_buttons.grid(row=1, column=0)
 
 equation = ""
 
+#função para mostrar no label o que está sendo digitado
+
 def show(value):
     global equation
     equation+=value
     display_label.config(text=equation)
 
+#função para limpar o label
 def clear():
     global equation
     equation = ""
     display_label.config(text=equation)
 
+#função para realizar os calculos
 def calculate():
     global equation
     result =""
