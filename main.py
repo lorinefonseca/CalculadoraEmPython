@@ -18,7 +18,7 @@ display_result.grid(row=0, column=0)
 window_buttons = Frame(window, width=340, height=500, bg="#2e1d36")
 window_buttons.grid(row=1, column=0)
 
-equation = ""
+equation = "" #define equation como uma string vazia
 
 #função para mostrar no label o que está sendo digitado
 def show(value):
@@ -36,12 +36,13 @@ def clear():
 def calculate():
     global equation
     result =""
-    if equation != "":
+
+    if equation != "": #se a variável equation for diferente de "null", o programa executa um código de exceção, para garantir que não apresentará nenhum erro
         try:
-            result = eval(equation)
+            result = eval(equation) #caso não houver erros, a função eval realizará a expressão e irá guardar o valor na variável result
         except:
-            result = "error"
-            equation = ""
+            result = "error" #caso o resultado apresentar um erro, como por exemplo uma divisão por 0, o programa irá zerar o valor de equation, e assim o usuário deverá começar novamente
+            equation = "" #o bloco except garante que o programa não feche e apresente erros indesejados, assim podemos tratar exceções por meio do próprio código, definindo medidas a serem tomadas
     display_label.config(text=result)
 
 # criando a label de resultado
